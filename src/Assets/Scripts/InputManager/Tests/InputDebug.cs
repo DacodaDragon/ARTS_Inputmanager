@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 //using UnityEngine.UI;
 using AnotherRTS.Management.RemappableInput;
+#if TMPRO
 using TMPro;
+#endif
 
 public class InputDebug : MonoBehaviour
 {
     InputManager m_InputManager;
 
+#if TMPRO
     [SerializeField]
     TMP_Text m_TextElement;
+#else
+    [SerializeField]
+    UnityEngine.UI.Text m_TextElement;
+#endif
 
     Key[] keys;
 
